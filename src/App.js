@@ -1,29 +1,29 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
+import NotMatch from './pages/NotMatch';
+import Home from './pages/Home';
+import StockDetails from './pages/StockDetails';
+import { getStocks } from './redux/stocks/stocksSlice';
+import store from './redux/configureStore';
 import './App.css';
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    store.dispatch(getStocks());
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <>
+        <Routes>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/home" component={Home} />
+          <Route path="/stock-details" element={<StockDetails />} />
+          <Route path="*" element={<NotMatch />} />
+        </Routes>
+      </>
     </div>
   );
-}
+};
 
 export default App;
