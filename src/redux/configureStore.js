@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import stocksReducer from './stocks/stocksSlice';
+import stocksReducer from './stocks/stocks';
 
 const store = configureStore({
   reducer: {
