@@ -18,6 +18,7 @@ ReactDOM.createRoot(rootElement).render(
       </Provider>
     </BrowserRouter>
   </React.StrictMode>,
+  document.getElementById('root'),
 );
 
 reportWebVitals();
