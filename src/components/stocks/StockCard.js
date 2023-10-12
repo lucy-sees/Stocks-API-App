@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
-import { getStock } from '../../redux/stocks/stocksSlice';
+import { getStock } from '../../redux/stocks/stocks';
 import store from '../../redux/configureStore';
 import StockCardStyle from './StockCard.module.css';
 
