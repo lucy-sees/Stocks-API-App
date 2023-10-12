@@ -1,10 +1,9 @@
 /* eslint-disable camelcase */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 // import axios from 'axios';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { v4 as uuidv4 } from 'uuid';
 
-// const API_KEY = '';
+// const API_KEY = '819c2b8705e5c67cf963a89ad94aa274';
 // const STOCKS_API_URL = 'https://financialmodelingprep.com/api/v3/available-traded/list?apikey=' + API_KEY;
 
 const initialState = {

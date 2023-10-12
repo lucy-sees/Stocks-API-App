@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import NotMatch from './pages/NotMatch';
 import Home from './pages/Home';
 import StockDetails from './pages/StockDetails';
-import { getStocks } from './redux/stocks/stocksSlice';
+import { getStocks } from './redux/stocks/stocks';
 import store from './redux/configureStore';
 import './App.css';
 
