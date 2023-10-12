@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { useEffect } from 'react';
 import NotMatch from './pages/NotMatch';
 import Home from './pages/Home';
-import StockDetails from './pages/StockDetails';
+import StockDetails from './pages/stockDetails';
 import { getStocks } from './redux/stocks/stocks';
 import store from './redux/configureStore';
 import './App.css';
