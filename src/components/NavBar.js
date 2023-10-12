@@ -7,7 +7,7 @@ import NavBarStyle from './NavBar.module.css';
 const NavBar = () => (
   <nav className={NavBarStyle.navContent}>
     <NavLink key={uuidv4()} to="/home">
-      <FaArrowLeft name="left-arrow" type="solid" color="#f8f8f8" />
+      <FaArrowLeft name="left-arrow" type="solid" color="#f7f7f7" />
     </NavLink>
     <div>
       <NavLink key={uuidv4()} to="/home" className={NavBarStyle.navLink}>Home</NavLink>
