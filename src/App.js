@@ -1,11 +1,16 @@
-import { Route, Routes } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from 'react-router-dom';
 import { useEffect } from 'react';
 import NotMatch from './pages/NotMatch';
 import Home from './pages/Home';
-import StockDetails from './pages/stockDetails';
+import NavBar from './components/NavBar';
 import { getStocks } from './redux/stocks/stocks';
 import store from './redux/configureStore';
 import './App.css';
+import StockDetails from './pages/StockDetails';
 
 const App = () => {
   useEffect(() => {
@@ -13,16 +18,23 @@ const App = () => {
   }, []);
 
   return (
-    <div>
-      <>
-        <Routes>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/home" component={Home} />
-          <Route path="/stock-details" element={<StockDetails />} />
-          <Route path="*" element={<NotMatch />} />
-        </Routes>
-      </>
-    </div>
+    <Router>
+      <NavBar />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/home">
+          <Home />
+        </Route>
+        <Route path="/stock-details">
+          <StockDetails />
+        </Route>
+        <Route path="*">
+          <NotMatch />
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 
