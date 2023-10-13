@@ -1,40 +1,26 @@
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-} from 'react-router-dom';
-import { useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { useDispatch, Provider } from 'react-redux';
 import NotMatch from './pages/NotMatch';
 import Home from './pages/Home';
-import NavBar from './components/NavBar';
 import { getStocks } from './redux/stocks/stocks';
 import store from './redux/configureStore';
 import './App.css';
 import StockDetails from './pages/StockDetails';
 
 const App = () => {
-  useEffect(() => {
-    store.dispatch(getStocks());
-  }, []);
+  const dispatch = useDispatch();
+  dispatch(getStocks());
 
   return (
-    <Router>
-      <NavBar />
-      <Switch>
-        <Route exact path="/">
-          <Home />
+    <Provider store={store}>
+      <Routes>
+        <Route path="/">
+          <Route path="/" component={Home} />
+          <Route path="/stock-details" component={StockDetails} />
         </Route>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route path="/stock-details">
-          <StockDetails />
-        </Route>
-        <Route path="*">
-          <NotMatch />
-        </Route>
-      </Switch>
-    </Router>
+        <Route path="*" component={NotMatch} />
+      </Routes>
+    </Provider>
   );
 };
 
