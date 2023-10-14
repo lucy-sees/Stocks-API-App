@@ -3,7 +3,7 @@ import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 
 const API_KEY = '17fb152bc0303cf17ad11b8b6fae087a';
-const STOCKS_API_URL = `https://financialmodelingprep.com/api/v3/stock/list?apikey=${API_KEY}`;
+const STOCKS_API_URL = `https://financialmodelingprep.com/api/v3/available-traded/list?apikey=${API_KEY}`;
 
 const initialState = {
   isFetching: false,
