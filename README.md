@@ -159,7 +159,7 @@ If you like this project, please consider giving it a star.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank all code reviewers for making this project better.
+I would like to thank all code reviewers for making this project better and [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio) for his creative design that I used to develop the UI of my project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
