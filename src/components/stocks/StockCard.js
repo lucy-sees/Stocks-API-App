@@ -16,6 +16,10 @@ const StockCard = (props) => {
     title,
   } = props;
 
+  const handleClick = () => {
+    store.dispatch(getStock(stockId));
+  };
+
   return (
     <div className={`${StockCardStyle.stockCard} ${stockCard}`}>
       <h3 className={StockCardStyle.stockSymbol}>{symbol}</h3>
@@ -24,12 +28,12 @@ const StockCard = (props) => {
         $
         {price}
       </p>
-      <NavLink to="/stock-details" exact className={StockCardStyle.stockLink}>
-        <button type="button" onClick={() => store.dispatch(getStock(stockId))}>
+      <NavLink to={`/stock-details/${stockId}`} exact className={StockCardStyle.stockLink}>
+        <button type="button" onClick={handleClick}>
           <FaArrowAltCircleRight name="right-arrow-circle" color="#f8f8f8" />
         </button>
       </NavLink>
-      { title !== '' ? <h6 className={StockCardStyle.sectionTitle}>{title}</h6> : '' }
+      {title !== '' ? <h6 className={StockCardStyle.sectionTitle}>{title}</h6> : ''}
     </div>
   );
 };
