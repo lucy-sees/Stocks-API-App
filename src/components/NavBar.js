@@ -11,7 +11,7 @@ const NavBar = () => (
     </NavLink>
     <div>
       <NavLink key={uuidv4()} to="/home" className={NavBarStyle.navLink}>Home</NavLink>
-      <NavLink key={uuidv4()} to="/my-profile" className={NavBarStyle.navLink}>Repository</NavLink>
+      <NavLink key={uuidv4()} to="https://github.com/lucy-sees" className={NavBarStyle.navLink}>Github</NavLink>
     </div>
   </nav>
 );
