@@ -1,38 +1,39 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import { useSelector } from 'react-redux';
 import StockCardStyle from './StockCard.module.css';
-import StocksListStyle from './StocksList.module.css';
 import StockFullCardStyle from './StockFullCard.module.css';
 
-const StockFullCard = ({ stock }) => (
-  <div key={stock.stockId} className={StocksListStyle.fullDescriptionContent}>
-    <div className={StockCardStyle.stockCard}>
-      <h3 className={StockCardStyle.stockSymbol}>{stock.symbol}</h3>
-      <h4 className={StockCardStyle.stockName}>{stock.name}</h4>
-      <p className={StockCardStyle.stockPrice}>
-        $
-        {stock.price}
-      </p>
-    </div>
-    <ul className={StockFullCardStyle.exchangeContent}>
-      <li>
-        <strong>Exchange:</strong>
-      </li>
-      <li>{stock.exchange}</li>
-      <li>{stock.exchangeShortName}</li>
-    </ul>
-  </div>
-);
+const StockFullCard = () => {
+  const allStocks = useSelector((state) => state.stocks);
+  const { data } = allStocks;
+  const fullStock = data.filter((stocks) => stocks.focus);
 
-StockFullCard.propTypes = {
-  stock: PropTypes.shape({
-    stockId: PropTypes.number.isRequired,
-    symbol: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    exchange: PropTypes.string.isRequired,
-    exchangeShortName: PropTypes.string.isRequired,
-  }).isRequired,
+  return (
+    <>
+      {
+        fullStock.map((stock) => (
+          <div key="full-description" className={StockFullCardStyle.fullDescriptionContent}>
+            <div className={StockCardStyle.stockCard}>
+              <h3 className={StockCardStyle.stockSymbol}>{stock.symbol}</h3>
+              <h4 className={StockCardStyle.stockName}>{stock.name}</h4>
+              <p className={StockCardStyle.stockPrice}>
+                $
+                {stock.price}
+              </p>
+            </div>
+            <ul className={StockFullCardStyle.exchangeContent}>
+              <li>
+                <strong>Exchange:</strong>
+              </li>
+              <li>{stock.exchange}</li>
+              <li>
+                {stock.exchangeShortName}
+              </li>
+            </ul>
+          </div>
+        ))
+      }
+    </>
+  );
 };
 
 export default StockFullCard;
