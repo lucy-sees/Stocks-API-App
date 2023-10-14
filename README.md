@@ -68,7 +68,7 @@ The Stocks API App is a website that allows you to:
 
 [Live Demo Link](https://stocks-api-app.onrender.com/)
 
-[Video resentation Link]()
+[Video resentation Link](https://www.loom.com/share/82cec6044f684fae9ef037d213c86210?sid=dce978c5-bbac-4a55-b5e6-9d58d088bc4c)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
