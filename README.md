@@ -4,17 +4,18 @@
 
   <img src="./Lucy.png" alt="logo" width="250"  height="auto" />
 
-<h3><b>Bookstore</b></h3>
+<h3><b>Stock API App</b></h3>
 
 </div>
 
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Metrics App ](#-metrcs-app-)
+- [📖 Stock API App ](#-metrcs-app-)
   - [🛠 Built With ](#-built-with-)
-    - [Tech Stack ](#tech-stack-)
-    - [Key Features ](#key-features-)
+    - [Tech Stack ](#tech-stack)
+    - [Key Features ](#key-features)
+  - [🚀 Live Demo](#live-demo)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -30,22 +31,44 @@
   - [📝 License ](#-license-)
 
 
-# 📖 Metrics App <a name="about-project"></a>
+# 📖 Stocks API App <a name="about-project"></a>
 
-The Metrics App is a website that allows you to:
+The Stocks API App is a website that allows you to:
 
-- Fetch metric data from API.
+- Fetch stock data from API.
+- Render and display stock data on a UI.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
 - React.js
-
+- JavaScript
+- CSS
+- Bootstrap
+- Redux
+- Redux Toolkit
+- API/Testing
 
 ### Key Features <a name="key-features"></a>
 
-- **API Calls**
+- **Home Page Details** 
+
+  <img src="./assets/stockHome.png" alt="logo" width="400"  height="auto" />
+
+- **Stock Details**
+
+  <img src="./assets/stockDetails.png" alt="logo" width="400"  height="auto" />
+
+  Original design idea by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+[Live Demo Link](https://stocks-api-app.onrender.com/)
+
+[Video Presentation Link](https://www.loom.com/share/82cec6044f684fae9ef037d213c86210?sid=dce978c5-bbac-4a55-b5e6-9d58d088bc4c)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -113,8 +136,8 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Deploy on GitHub**
 - [ ] **Responsive design**
+- [ ] **Stock Market Analysis page**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -136,7 +159,7 @@ If you like this project, please consider giving it a star.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank all code reviewers for making this project better.
+I would like to thank all code reviewers for making this project better and [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio) for his creative design that I used to develop the UI of my project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
