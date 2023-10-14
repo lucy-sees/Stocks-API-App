@@ -21,17 +21,17 @@ const StocksList = () => {
   };
 
   let status = true;
-  let ligth = 0;
+  let light = 0;
   let dark = 0;
   let bgValue = '';
 
   const defBgControlValue = () => {
     if (status) {
-      ligth += 1;
-      bgValue = 'bgLigth';
-      if (ligth === 2) {
+      light += 1;
+      bgValue = 'bgLight';
+      if (light === 2) {
         status = false;
-        ligth = 0;
+        light = 0;
       }
     } else {
       dark += 1;
