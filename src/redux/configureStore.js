@@ -6,7 +6,7 @@ import stocksReducer from './stocks/stocks';
 const store = configureStore({
   reducer: {
     stocks: stocksReducer,
-    // Add other reducers here if needed
+    // additional reducers could be added here
   },
   middleware: [thunk, logger],
 });
