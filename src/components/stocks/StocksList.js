@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import StockCard from './StockCard';
@@ -63,6 +63,7 @@ const StocksList = () => {
           data.filter((stocks) => (exchangeSelected !== 'none' ? stocks.exchangeShortName === exchangeSelected : stocks)).map((stock, index) => (
             <StockCard
               key={uuidv4()}
+              stock={stock}
               stockId={stock.stockId}
               symbol={stock.symbol}
               name={stock.name}

@@ -1,7 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
-import { getStock } from '../../redux/stocks/stocksSlice';
+import { FaArrowAltCircleRight } from 'react-icons/fa';
+import { getStock } from '../../redux/stocks/stocks';
 import store from '../../redux/configureStore';
 import StockCardStyle from './StockCard.module.css';
 
@@ -25,7 +26,7 @@ const StockCard = (props) => {
       </p>
       <NavLink to="/stock-details" exact className={StockCardStyle.stockLink}>
         <button type="button" onClick={() => store.dispatch(getStock(stockId))}>
-          <box-icon name="right-arrow-circle" color="#f8f8f8" />
+          <FaArrowAltCircleRight name="right-arrow-circle" color="#f8f8f8" />
         </button>
       </NavLink>
       { title !== '' ? <h6 className={StockCardStyle.sectionTitle}>{title}</h6> : '' }

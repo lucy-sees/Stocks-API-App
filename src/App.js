@@ -1,28 +1,26 @@
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { useEffect } from 'react';
-import NotMatch from './pages/NotMatch';
+import { useDispatch, Provider } from 'react-redux';
 import Home from './pages/Home';
 import StockDetails from './pages/StockDetails';
-import { getStocks } from './redux/stocks/stocksSlice';
+import NotMatch from './pages/NotMatch';
+import { getStocks } from './redux/stocks/stocks';
 import store from './redux/configureStore';
 import './App.css';
 
 const App = () => {
-  useEffect(() => {
-    store.dispatch(getStocks());
-  }, []);
+  const dispatch = useDispatch();
+  dispatch(getStocks());
 
   return (
-    <div>
-      <>
-        <Routes>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/home" component={Home} />
-          <Route path="/stock-details" element={<StockDetails />} />
-          <Route path="*" element={<NotMatch />} />
-        </Routes>
-      </>
-    </div>
+    <Provider store={store}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/stock-details/:id" element={<StockDetails />} />
+        <Route path="*" element={<NotMatch />} />
+      </Routes>
+    </Provider>
   );
 };
 

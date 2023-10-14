@@ -1,7 +1,7 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { NavLink } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
 import NavBarStyle from './NavBar.module.css';
 
 const NavBar = () => (
@@ -11,7 +11,7 @@ const NavBar = () => (
     </NavLink>
     <div>
       <NavLink key={uuidv4()} to="/home" className={NavBarStyle.navLink}>Home</NavLink>
-      <NavLink key={uuidv4()} to="/my-profile" className={NavBarStyle.navLink}>Repository</NavLink>
+      <NavLink key={uuidv4()} to="https://github.com/lucy-sees" className={NavBarStyle.navLink}>Github</NavLink>
     </div>
   </nav>
 );

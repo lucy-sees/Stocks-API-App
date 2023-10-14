@@ -1,3 +1,4 @@
+import React from 'react';
 import StockFullCard from '../components/stocks/StockFullCard';
 
 const StockDetails = () => (
@@ -7,4 +8,4 @@ const StockDetails = () => (
   </section>
 );
 
-export default StockDetails;
+export default React.memo(StockDetails);
