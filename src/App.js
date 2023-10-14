@@ -1,11 +1,12 @@
-import { Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import { useDispatch, Provider } from 'react-redux';
-import NotMatch from './pages/NotMatch';
 import Home from './pages/Home';
+import StockDetails from './pages/StockDetails';
+import NotMatch from './pages/NotMatch';
 import { getStocks } from './redux/stocks/stocks';
 import store from './redux/configureStore';
 import './App.css';
-import StockDetails from './pages/StockDetails';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -14,11 +15,10 @@ const App = () => {
   return (
     <Provider store={store}>
       <Routes>
-        <Route path="/">
-          <Route path="/" component={Home} />
-          <Route path="/stock-details" component={StockDetails} />
-        </Route>
-        <Route path="*" component={NotMatch} />
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/stock-details/:id" element={<StockDetails />} />
+        <Route path="*" element={<NotMatch />} />
       </Routes>
     </Provider>
   );
